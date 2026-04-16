@@ -80,4 +80,39 @@ a {
     color: inherit;
 }
 
+.filtros {
+    text-align: center;
+    margin: 20px;
+}
 
+.filtros button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.filtros button:hover {
+    background-color: orange;
+}
+
+.historia {
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+.oculto {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+}
+
+.historia {
+    transition: all 0.3s ease;
+}
+
+.desaparecer {
+    opacity: 0;
+    transform: scale(0.8);
+}
