@@ -1,0 +1,83 @@
+body{
+    background-color: #111;
+    color: white;
+    font-family: Arial;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #1a1a1a;
+    border-bottom: 2px solid #333;
+}
+
+.izquierda {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+h1{
+    color: orange;
+    margin: 0;
+}
+
+h2{
+    color: lightblue;
+    text-align: center;
+    margin-top: 40px;
+    border-bottom: 2px solid gray;
+    padding-bottom: 5px;
+}
+
+#buscador {
+    width: 250px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+.contenedor{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    padding: 20px;
+}
+
+.historia{
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.historia:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.historia img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.historia p{
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
