@@ -34,7 +34,7 @@ h1{
 h2{
     color: lightblue;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 30px;
     border-bottom: 2px solid gray;
     padding-bottom: 5px;
 }
@@ -44,40 +44,6 @@ h2{
     padding: 10px;
     border-radius: 10px;
     border: none;
-}
-
-.contenedor{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 15px;
-    padding: 20px;
-}
-
-.historia{
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.historia:hover{
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-}
-
-.historia img{
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.historia p{
-    font-size: 14px;
-    margin-top: 5px;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
 }
 
 .filtros {
@@ -97,22 +63,176 @@ a {
     background-color: orange;
 }
 
-.historia {
+.contenedor{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    padding: 20px;
+    overflow: visible;
+}
+
+.historia{
+    position: relative; 
     text-align: center;
-    transition: all 0.4s ease;
-}
-
-.oculto {
-    opacity: 0;
-    transform: scale(0.8);
-    pointer-events: none;
-}
-
-.historia {
     transition: all 0.3s ease;
+    overflow: visible; 
 }
+
+.historia:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    z-index: 1000; 
+}
+
+.historia img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.historia p{
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 
 .desaparecer {
     opacity: 0;
     transform: scale(0.8);
+}
+
+
+.info {
+    position: absolute;
+    top: 0;
+    left: 105%;
+    width: 220px;
+    max-height: 250px;
+
+    background-color: #222;
+    padding: 10px;
+    border-radius: 10px;
+
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+
+    pointer-events: auto;
+    z-index: 999;
+
+    overflow-y: auto;
+}
+
+.historia.izq .info {
+    left: auto;
+    right: 105%;
+}
+
+.info p {
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+
+.historia:hover .info,
+.historia .info:hover {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto; 
+}
+
+.pagina-manga {
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+}
+
+.info-manga {
+    width: 300px;
+}
+
+.info-manga img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.capitulos {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centra horizontal */
+    gap: 10px;
+}
+
+.capitulos h2 {
+    text-align: center;
+}
+
+.capitulos a {
+    width: 200px;
+    text-align: center;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+}
+
+.capitulos a:hover {
+    background-color: orange;
+}
+
+.lector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lector img {
+    width: 100%;
+    max-width: 800px;
+}
+
+.lector.compacto img {
+    width: 40%;
+}
+
+@media (max-width: 768px) {
+
+    .contenedor {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lector img {
+        width: 100%;
+    }
+
+    .pagina-manga {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-manga {
+        width: 80%;
+        text-align: center;
+    }
+
+    .capitulos {
+        width: 100%;
+        align-items: center;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .contenedor {
+        grid-template-columns: 1fr;
+    }
+
 }
