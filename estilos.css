@@ -149,12 +149,14 @@ a {
 
 .pagina-manga {
     display: flex;
+    justify-content: space-between; /* separa en 3 bloques */
+    align-items: flex-start;
     gap: 40px;
     padding: 40px;
 }
 
 .info-manga {
-    width: 300px;
+    width: 25%;
 }
 
 .info-manga img {
@@ -163,21 +165,23 @@ a {
 }
 
 .capitulos {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* centra horizontal */
-    gap: 10px;
+    width: 40%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    justify-items: center;
 }
 
 .capitulos h2 {
+    grid-column: span 3;
     text-align: center;
 }
 
 .capitulos a {
-    width: 200px;
+    width: 100%;
     text-align: center;
-    background-color: #222;
     padding: 10px;
+    background-color: #222;
     border-radius: 8px;
     text-decoration: none;
     color: white;
@@ -217,14 +221,18 @@ a {
         align-items: center;
     }
 
-    .info-manga {
+    .info-manga,
+    .capitulos,
+    .buscador-box {
         width: 80%;
-        text-align: center;
     }
 
     .capitulos {
-        width: 100%;
-        align-items: center;
+        grid-template-columns: 1fr;
+    }
+
+    .capitulos h2 {
+        grid-column: span 1;
     }
 
 }
@@ -254,4 +262,17 @@ a {
 
 .btn:hover {
     background-color: orange;
+}
+
+.buscador-box {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+#buscarCap {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
 }
